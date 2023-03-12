@@ -5,10 +5,12 @@ import { iCart } from "../CartPreview/CartPreview";
 import styles from "./CartsList.module.css";
 import CreateButton from "../buttons/createButton/CreateButton";
 import DeleteButton from "../buttons/deleteButton/DeleteButton";
+import { AppContext } from "../../App";
 
 function CartsList() {
+  // @ts-ignore
+  const { carts, setCarts } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
-  const [carts, setCarts] = useState([]);
   useEffect(() => {
     setIsLoading(true);
 
@@ -54,7 +56,7 @@ function CartsList() {
     })
       .then((res) => res.json())
       .then(() => {
-         // @ts-ignore
+        // @ts-ignore
         const newCartsList = carts.filter((cart) => cart.id !== id);
         setCarts(newCartsList);
       });
@@ -69,7 +71,7 @@ function CartsList() {
       </div>
       <div>
         {!isLoading ? (
-          carts.map((cart: iCart, index) => (
+          carts.map((cart: iCart, index: number) => (
             <CartPreview key={index} {...cart} />
           ))
         ) : (
