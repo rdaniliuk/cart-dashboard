@@ -4,27 +4,27 @@ import Main from "./components/Main/Main";
 import Modal from "./components/modal/Modal";
 import CreateCart from "./components/CreateCart/CreateCart";
 import DeleteCart from "./components/DeleteCart/DeleteCart";
-import { iCart } from "./components/CartPreview/CartPreview";
+import CartInfo from "./components/CartInformation/CartInfo";
+import { ICart } from "./components/CartPreview/CartPreview";
 
 interface IContext {
-  carts: iCart[];
-  setCarts: (carts: iCart[]) => void;
+  carts: ICart[];
+  setCarts: (carts: ICart[]) => void;
   modalIsOpen: boolean;
   setModalIsOpen: (isOpen: boolean) => void;
 }
-export const AppContext = React.createContext<IContext>({
+
+const defaultContext: IContext = {
   carts: [],
-  setCarts: function (carts: iCart[]): void {
-    throw new Error("Function not implemented.");
-  },
+  setCarts: () => {},
   modalIsOpen: false,
-  setModalIsOpen: function (isOpen: boolean): void {
-    throw new Error("Function not implemented.");
-  }
-});
+  setModalIsOpen: () => {},
+};
+
+export const AppContext = React.createContext<IContext>(defaultContext);
 
 function App() {
-  const [carts, setCarts] = useState<iCart[]>([]);
+  const [carts, setCarts] = useState<ICart[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   return (
@@ -33,9 +33,9 @@ function App() {
       <AppContext.Provider
         value={{ carts, setCarts, modalIsOpen, setModalIsOpen }}
       >
-        {modalIsOpen ? (
-          <Modal setModalIsOpen={setModalIsOpen} children={<CreateCart />} />
-        ) : null}
+        {/* {modalIsOpen ? (
+          <Modal setModalIsOpen={setModalIsOpen} children={<CartInfo cart={carts[1]} />} />
+        ) : null} */}
         <Main />
       </AppContext.Provider>
     </div>

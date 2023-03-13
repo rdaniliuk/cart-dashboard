@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-export interface iButton {
+export interface IButton {
   icon: string;
   onClick: () => void;
 }
 
-function Button(props: iButton) {
+function Button(props: IButton) {
   return (
     <button className={styles.wrapper} onClick={props.onClick}>
       <img src={props.icon} alt="button-icon" />

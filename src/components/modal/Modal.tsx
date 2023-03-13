@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Modal.module.css";
 
-interface iModal {
+interface IModal {
   setModalIsOpen: (state: boolean) => void;
   children: React.ReactNode;
 }
 
-function Modal({ setModalIsOpen, children }: iModal) {
+function Modal({ setModalIsOpen, children }: IModal) {
   return (
     <div className={styles.modal} onClick={() => setModalIsOpen(false)}>
       <div

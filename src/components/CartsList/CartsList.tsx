@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CartPreview from "../CartPreview/CartPreview";
-import { iCart } from "../CartPreview/CartPreview";
+import { ICart } from "../CartPreview/CartPreview";
 import styles from "./CartsList.module.css";
 import Button from "../button/Button";
 import { CREATE_BUTTON_ICON } from "../../assets/icons";
@@ -36,7 +36,7 @@ function CartsList() {
       </div>
       <div>
         {!isLoading ? (
-          carts.map((cart: iCart, index: number) => (
+          carts.map((cart: ICart, index: number) => (
             <CartPreview key={index} {...cart} />
           ))
         ) : (
