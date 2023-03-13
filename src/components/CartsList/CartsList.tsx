@@ -11,6 +11,7 @@ function CartsList() {
   // @ts-ignore
   const { carts, setCarts } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setIsLoading(true);
 
@@ -66,6 +67,7 @@ function CartsList() {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <h2>All Carts ({carts.length})</h2>
+
         <CreateButton onClick={createCart} />
         <DeleteButton onClick={() => deleteCart(2)} />
       </div>
