@@ -1,19 +1,19 @@
 .wrapper {
-   background: none ;
-   border: none;
-   cursor: pointer;
-   transition: 0.2s;
-   border-radius: 20%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 20%;
 }
 
 .wrapper:hover {
-   scale: 1.1;
+  scale: 1.1;
 }
 
 .wrapper:active {
-   background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .wrapper img {
-   width: 30px;
+  width: 30px;
 }

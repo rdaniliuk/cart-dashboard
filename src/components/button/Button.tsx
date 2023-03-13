@@ -10,10 +10,7 @@ export interface iButton {
 function Button(props: iButton) {
   return (
     <button className={styles.wrapper} onClick={props.onClick}>
-      <img
-        src={props.icon}
-        alt="button-icon"
-      />
+      <img src={props.icon} alt="button-icon" />
     </button>
   );
 }
