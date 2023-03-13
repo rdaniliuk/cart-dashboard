@@ -1,5 +1,4 @@
 import React from "react";
-// @ts-ignore
 import styles from "./Button.module.css";
 
 export interface iButton {

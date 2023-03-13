@@ -1,5 +1,4 @@
 import React from "react";
-// @ts-ignore
 import styles from "./CartPreview.module.css";
 import Button from "../button/Button";
 import { DELETE_BUTTON_ICON } from "../../assets/icons";
@@ -20,9 +19,7 @@ function CartPreview(props: iCart) {
       <div>{props.id}</div>
       <div>
         <Button
-          onClick={function (): void {
-            throw new Error("Function not implemented.");
-          }}
+          onClick={() => console.log('delete')}
           icon={DELETE_BUTTON_ICON}
         />
       </div>
