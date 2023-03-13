@@ -3,8 +3,8 @@ import CartPreview from "../CartPreview/CartPreview";
 import { iCart } from "../CartPreview/CartPreview";
 // @ts-ignore
 import styles from "./CartsList.module.css";
-import CreateButton from "../buttons/createButton/CreateButton";
-import DeleteButton from "../buttons/deleteButton/DeleteButton";
+import Button from "../button/Button";
+import { CREATE_BUTTON_ICON } from "../../assets/icons";
 import { AppContext } from "../../App";
 
 function CartsList() {
@@ -67,9 +67,7 @@ function CartsList() {
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <h2>All Carts ({carts.length})</h2>
-
-        <CreateButton onClick={createCart} />
-        <DeleteButton onClick={() => deleteCart(2)} />
+        <Button icon={CREATE_BUTTON_ICON} onClick={createCart} />
       </div>
       <div>
         {!isLoading ? (
