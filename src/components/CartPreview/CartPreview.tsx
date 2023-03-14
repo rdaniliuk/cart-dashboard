@@ -2,9 +2,12 @@ import React from "react";
 import styles from "./CartPreview.module.css";
 import Button from "../button/Button";
 import { DELETE_BUTTON_ICON } from "../../assets/icons";
+import { AppContext } from "../../App";
+import DeleteCart from "../DeleteCart/DeleteCart";
+import Modal from "../modal/Modal";
 
 export interface ICart {
-  id?: number;
+  id: number;
   products?: IProduct[];
   total?: number;
   discountedTotal?: number;
@@ -25,12 +28,24 @@ export interface IProduct {
 }
 
 function CartPreview(props: ICart) {
+  const { setModalId, setSelectedCart } = React.useContext(AppContext);
   return (
     <div className={styles.wrapper}>
-      <div>{props.id}</div>
+      <div
+        className={styles.wrapper}
+        onClick={() => {
+          setSelectedCart(props);
+          setModalId(1);
+        }}
+      >
+        {props.id}
+      </div>
       <div>
         <Button
-          onClick={() => console.log("delete")}
+          onClick={() => {
+            setSelectedCart(props);
+            setModalId(3);
+          }}
           icon={DELETE_BUTTON_ICON}
         />
       </div>

@@ -5,7 +5,7 @@ import { CREATE_CART_ICON } from "../../assets/icons";
 import { AppContext } from "../../App";
 
 function CreateCart() {
-  const { carts, setCarts } = React.useContext(AppContext);
+  const { carts, setCarts, setModalId } = React.useContext(AppContext);
   const [value, setValue] = React.useState(1);
 
   function createNewCart(productsValue: number) {
@@ -32,14 +32,10 @@ function CreateCart() {
       });
   }
 
-  function handlerSubmit(e: React.FormEvent, value: number) {
-    e.preventDefault();
-    createNewCart(value);
-  }
 
   return (
     <div>
-      <form action="" onSubmit={(e) => handlerSubmit(e, value)}>
+      <form action="" onSubmit={(e: React.FormEvent) => e.preventDefault()}>
         <p></p>
         <label htmlFor="products">
           How many products do you need in the cart?
@@ -58,7 +54,9 @@ function CreateCart() {
         {value}
         <Button
           icon={CREATE_CART_ICON}
-          onClick={() => console.log("create cart")}
+          onClick={() => {createNewCart(value);
+            setModalId(0);
+          console.log('create')}}
         />
       </form>
     </div>

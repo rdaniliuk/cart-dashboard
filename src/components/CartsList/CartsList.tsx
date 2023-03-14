@@ -10,7 +10,7 @@ import Modal from "../modal/Modal";
 
 function CartsList() {
 
-  const { carts, setCarts } = React.useContext(AppContext);
+  const { carts, setCarts, modalId, setModalId } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function CartsList() {
         <h2>All Carts ({carts.length})</h2>
         <Button
           icon={CREATE_BUTTON_ICON}
-          onClick={() => console.log("create cart")}
+          onClick={() => setModalId(2)}
         />
       </div>
       <div>

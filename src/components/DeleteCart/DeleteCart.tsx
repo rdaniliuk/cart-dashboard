@@ -5,7 +5,7 @@ import Button from "../button/Button";
 import { CANCEL_ICON, CONFIRM_ICON } from "../../assets/icons";
 
 function DeleteCart({ cartId }: { cartId: number }) {
-  const { carts, setCarts, setModalIsOpen } = React.useContext(AppContext);
+  const { carts, setCarts, setModalId } = React.useContext(AppContext);
 
   function deleteCart(id: number) {
     fetch(`https://dummyjson.com/carts/${id}`, {
@@ -25,10 +25,10 @@ function DeleteCart({ cartId }: { cartId: number }) {
         icon={CONFIRM_ICON}
         onClick={() => {
           deleteCart(cartId);
-          setModalIsOpen(false);
+          setModalId(0);
         }}
       />
-      <Button icon={CANCEL_ICON} onClick={() => setModalIsOpen(false)} />
+      <Button icon={CANCEL_ICON} onClick={() => setModalId(0)} />
     </div>
   );
 }

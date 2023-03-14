@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Modal.module.css";
 
 interface IModal {
-  setModalIsOpen: (state: boolean) => void;
+  setModalId: (state: number) => void;
   children: React.ReactNode;
 }
 
-function Modal({ setModalIsOpen, children }: IModal) {
+function Modal({ setModalId, children }: IModal) {
   return (
-    <div className={styles.modal} onClick={() => setModalIsOpen(false)}>
+    <div className={styles.modal} onClick={() => setModalId(0)}>
       <div
         className={styles.modal__content}
         onClick={(e) => e.stopPropagation()}
