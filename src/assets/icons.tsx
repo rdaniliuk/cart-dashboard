@@ -7,3 +7,5 @@ export const CREATE_CART_ICON =
 export const CONFIRM_ICON = "https://img.icons8.com/fluency/256/approval.png";
 export const CANCEL_ICON =
   "https://img.icons8.com/fluency/256/do-not-disturb.png";
+export const CART_ICON =
+  "https://img.icons8.com/pastel-glyph/256/shopping-cart.png";

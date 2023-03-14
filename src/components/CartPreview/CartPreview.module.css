@@ -1,7 +1,44 @@
 .wrapper {
   border: 1px solid black;
-  margin: 5px;
+  border-radius: 12px;
   padding: 5px;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+}
+
+.wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  scale: 1.01;
+}
+
+.content {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.cart__number {
+  position: relative;
+}
+
+.cart__number img {
+  width: 40px;
+}
+
+.cart__id {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cart__value {
+  font-size: 15px;
+  font-weight: 800;
 }

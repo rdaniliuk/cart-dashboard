@@ -1,6 +1,23 @@
 .wrapper {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@media (min-width: 480px) {
+  .wrapper {
+    padding: 10px;
+  }
 }

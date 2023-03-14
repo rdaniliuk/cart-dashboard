@@ -1,0 +1,32 @@
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.header {
+   display: flex;
+   justify-self: flex-end;
+   justify-content: space-between;
+   align-items: center;
+   font-weight: 800;
+   text-align: center;
+}
+
+.product__content {
+   display: flex;
+   justify-content: space-between;
+}
+
+.product__title {
+   width: 130px;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+@media (min-width: 480px) {
+   .product__title {
+      width: 270px;
+   }
+ }

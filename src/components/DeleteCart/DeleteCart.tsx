@@ -19,16 +19,23 @@ function DeleteCart({ cartId }: { cartId: number }) {
   }
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <p>You really want delete this cart?</p>
-      <Button
-        icon={CONFIRM_ICON}
-        onClick={() => {
-          deleteCart(cartId);
-          setModalId(0);
-        }}
-      />
-      <Button icon={CANCEL_ICON} onClick={() => setModalId(0)} />
+      <div className={styles.buttons}>
+        <Button
+          icon={CONFIRM_ICON}
+          onClick={() => {
+            deleteCart(cartId);
+            setModalId(0);
+          }}
+          buttonText={""}
+        />
+        <Button
+          icon={CANCEL_ICON}
+          onClick={() => setModalId(0)}
+          buttonText={""}
+        />
+      </div>
     </div>
   );
 }

@@ -35,7 +35,7 @@ function CreateCart() {
 
   return (
     <div>
-      <form action="" onSubmit={(e: React.FormEvent) => e.preventDefault()}>
+      <form className={styles.form} action="" onSubmit={(e: React.FormEvent) => e.preventDefault()}>
         <p></p>
         <label htmlFor="products">
           How many products do you need in the cart?
@@ -54,10 +54,10 @@ function CreateCart() {
         {value}
         <Button
           icon={CREATE_CART_ICON}
-          onClick={() => {createNewCart(value);
+          onClick={() => {
+            createNewCart(value);
             setModalId(0);
-          console.log('create')}}
-        />
+          } } buttonText={"Create"}        />
       </form>
     </div>
   );

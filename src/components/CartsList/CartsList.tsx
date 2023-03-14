@@ -9,7 +9,6 @@ import CreateCart from "../CreateCart/CreateCart";
 import Modal from "../modal/Modal";
 
 function CartsList() {
-
   const { carts, setCarts, modalId, setModalId } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -32,9 +31,10 @@ function CartsList() {
         <Button
           icon={CREATE_BUTTON_ICON}
           onClick={() => setModalId(2)}
+          buttonText={"Create"}
         />
       </div>
-      <div>
+      <div className={styles.list}>
         {!isLoading ? (
           carts.map((cart: ICart, index: number) => (
             <CartPreview key={index} {...cart} />
