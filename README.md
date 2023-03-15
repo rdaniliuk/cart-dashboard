@@ -2,15 +2,16 @@
 
 This project is sample dashboard.
 User can:
-* View a list of all baskets,
-* Add and remove baskets,
-* After selecting a given basket, the user can see the price of each product in the basket, and its price after the discount. This data stay shown in the chart.
+* View a list of all baskets;
+* Add and remove baskets;
+* After selecting a given basket, the user can see the price of each product in the basket, and its price after the discount. This data stay shown in the chart;
 
 ## Technologies stack
 
 ### TypeScript
 
 ### React
+
 
 ## Installation
 
