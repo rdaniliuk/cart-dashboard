@@ -9,7 +9,7 @@ function Header() {
       <div>
         <img src={LOGO_ICON} alt="icon" />
       </div>
-      <span>Card Dashboard</span>
+      Card Dashboard
     </div>
   );
 }

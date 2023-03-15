@@ -1,8 +1,9 @@
 import React from "react";
-import { AppContext } from "../../App";
 import styles from "./DeleteCart.module.css";
 import Button from "../button/Button";
 import { CANCEL_ICON, CONFIRM_ICON } from "../../assets/icons";
+import { AppContext } from "../../context";
+import { OFF_MODAL } from "../../constants";
 
 function DeleteCart({ cartId }: { cartId: number }) {
   const { carts, setCarts, setModalId } = React.useContext(AppContext);
@@ -26,13 +27,13 @@ function DeleteCart({ cartId }: { cartId: number }) {
           icon={CONFIRM_ICON}
           onClick={() => {
             deleteCart(cartId);
-            setModalId(0);
+            setModalId(OFF_MODAL);
           }}
           buttonText={""}
         />
         <Button
           icon={CANCEL_ICON}
-          onClick={() => setModalId(0)}
+          onClick={() => setModalId(OFF_MODAL)}
           buttonText={""}
         />
       </div>

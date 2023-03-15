@@ -1,4 +1,5 @@
 import React from "react";
+import { OFF_MODAL } from "../../constants";
 import styles from "./Modal.module.css";
 
 interface IModal {
@@ -8,7 +9,7 @@ interface IModal {
 
 function Modal({ setModalId, children }: IModal) {
   return (
-    <div className={styles.modal} onClick={() => setModalId(0)}>
+    <div className={styles.modal} onClick={() => setModalId(OFF_MODAL)}>
       <div
         className={styles.modal__content}
         onClick={(e) => e.stopPropagation()}

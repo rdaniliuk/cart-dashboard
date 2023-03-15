@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./CartPreview.module.css";
 import Button from "../button/Button";
 import { DELETE_BUTTON_ICON } from "../../assets/icons";
-import { AppContext } from "../../App";
 import { CART_ICON } from "../../assets/icons";
+import { AppContext } from "../../context";
+import { CONFIRM_MODAL, INFO_MODAL } from "../../constants";
 
 export interface ICart {
   id: number;
@@ -34,7 +35,7 @@ function CartPreview(props: ICart) {
         className={styles.content}
         onClick={() => {
           setSelectedCart(props);
-          setModalId(1);
+          setModalId(INFO_MODAL);
         }}
       >
         <div className={styles.cart__number}>
@@ -57,7 +58,7 @@ function CartPreview(props: ICart) {
         <Button
           onClick={() => {
             setSelectedCart(props);
-            setModalId(3);
+            setModalId(CONFIRM_MODAL);
           }}
           icon={DELETE_BUTTON_ICON}
           buttonText={""}

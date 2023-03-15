@@ -5,7 +5,8 @@
   font-style: italic;
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: #d73343;
+  color: #ffd77f;
   z-index: 300;
   transition: 0.3s;
 }
@@ -16,6 +17,7 @@
 }
 
 .wrapper.sticky {
-  background-color: #ffa932;
+  background-color: #b9b2a2;
+  color: #009688;
   padding: 0px 5px 0px 5px;
 }

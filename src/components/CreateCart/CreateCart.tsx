@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./CreateCart.module.css";
 import Button from "../button/Button";
 import { CREATE_CART_ICON } from "../../assets/icons";
-import { AppContext } from "../../App";
+import { AppContext } from "../../context";
+import { OFF_MODAL } from "../../constants";
 
 function CreateCart() {
   const { carts, setCarts, setModalId } = React.useContext(AppContext);
@@ -59,7 +60,7 @@ function CreateCart() {
           icon={CREATE_CART_ICON}
           onClick={() => {
             createNewCart(value);
-            setModalId(0);
+            setModalId(OFF_MODAL);
           }}
           buttonText={"Create"}
         />

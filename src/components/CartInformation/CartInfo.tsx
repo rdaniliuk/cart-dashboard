@@ -10,9 +10,13 @@ import {
 import { ICart, IProduct } from "../CartPreview/CartPreview";
 import CartInfoMobile from "./CartInfoMobile";
 
-function CartInfo({ cart }: { cart: ICart }) {
-  const screenWidth = window.screen.width;
-  let products: IProduct[] = [];
+function addDiscountPrice({
+  cart,
+  products,
+}: {
+  cart: ICart;
+  products: IProduct[];
+}) {
   if (cart.products) {
     products = [...cart.products];
   }
@@ -21,6 +25,16 @@ function CartInfo({ cart }: { cart: ICart }) {
       product.price - (product.price / 100) * product.discountPercentage
     );
   });
+  return products;
+}
+
+function CartInfo({ cart }: { cart: ICart }) {
+  if (!cart.products) {
+    return null;
+  }
+  const screenWidth = window.screen.width;
+  let products: IProduct[] = [];
+  addDiscountPrice({ cart, products });
   return (
     <div>
       {screenWidth > 600 ? (
@@ -40,7 +54,7 @@ function CartInfo({ cart }: { cart: ICart }) {
           <Line dataKey="x-ordinate number --> product id" stroke="#ED1A1A" />
         </LineChart>
       ) : (
-        <CartInfoMobile products={products} />
+        <CartInfoMobile products={cart.products} />
       )}
     </div>
   );

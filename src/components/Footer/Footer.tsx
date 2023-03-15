@@ -1,5 +1,6 @@
 import { GITHUB_ICON, LINKEDIN_ICON } from "../../assets/icons";
-import { GITHUB_LINK, LINKED_LINK } from "../../assets/link";
+import { GITHUB_LINK, LINKED_LINK } from "../../constants";
+
 import styles from "./Footer.module.css";
 
 function Footer() {

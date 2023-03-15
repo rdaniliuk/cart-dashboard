@@ -4,7 +4,8 @@ import { ICart } from "../CartPreview/CartPreview";
 import styles from "./CartsList.module.css";
 import Button from "../button/Button";
 import { CREATE_BUTTON_ICON } from "../../assets/icons";
-import { AppContext } from "../../App";
+import { AppContext } from "../../context";
+import { CREATE_MODAL } from "../../constants";
 
 function CartsList() {
   const { carts, setCarts, setModalId } = React.useContext(AppContext);
@@ -18,7 +19,6 @@ function CartsList() {
       .then((res) => {
         setCarts(res.carts);
         setIsLoading(false);
-        console.log(res.carts);
       });
   }, []);
 
@@ -28,7 +28,7 @@ function CartsList() {
         <h2>All Carts ({carts.length})</h2>
         <Button
           icon={CREATE_BUTTON_ICON}
-          onClick={() => setModalId(2)}
+          onClick={() => setModalId(CREATE_MODAL)}
           buttonText={"Create"}
         />
       </div>
