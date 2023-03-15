@@ -1,4 +1,3 @@
-import React from "react";
 import {
   LineChart,
   Line,
@@ -25,7 +24,12 @@ function CartInfo({ cart }: { cart: ICart }) {
   return (
     <div>
       {screenWidth > 600 ? (
-        <LineChart width={400} height={300} data={cart.products}>
+        <LineChart
+          width={400}
+          height={300}
+          data={cart.products}
+          data-testid="chart"
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="id" />
           <YAxis />

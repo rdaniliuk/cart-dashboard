@@ -1,21 +1,21 @@
 .wrapper {
-   padding: 5px;
-   display: flex;
-   align-items: center;
-   font-style: italic;
-   position: sticky;
-   top: 0;
-   background-color: #fff;
-   z-index: 300;
-   transition: 0.3s;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-style: italic;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 300;
+  transition: 0.3s;
 }
 
 .wrapper img {
-   width: 30px;
-   vertical-align: middle;
+  width: 30px;
+  vertical-align: middle;
 }
 
 .wrapper.sticky {
-   background-color: #FFA932;
-   padding: 0px 5px 0px 5px;
- }
+  background-color: #ffa932;
+  padding: 0px 5px 0px 5px;
+}

@@ -1,4 +1,3 @@
-import React from "react";
 import { GITHUB_ICON, LINKEDIN_ICON } from "../../assets/icons";
 import { GITHUB_LINK, LINKED_LINK } from "../../assets/link";
 import styles from "./Footer.module.css";

@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import styles from '../Header/Header.module.css';
+import { useEffect, useRef } from "react";
+import styles from "../Header/Header.module.css";
 
 export function useHeader() {
   const headerWrapper = useRef<HTMLDivElement | null>(null);
@@ -13,7 +13,7 @@ export function useHeader() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', scroll);
+    window.addEventListener("scroll", scroll);
   }, []);
 
   return headerWrapper;

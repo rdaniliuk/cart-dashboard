@@ -1,4 +1,3 @@
-import React from "react";
 import { LOGO_ICON } from "../../assets/icons";
 import { useHeader } from "../hooks/useHeader";
 import styles from "./Header.module.css";
