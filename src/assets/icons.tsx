@@ -1,3 +1,5 @@
+export const LOGO_ICON =
+  "https://img.icons8.com/color/256/shopping-cart.png";
 export const CREATE_BUTTON_ICON =
   "https://img.icons8.com/arcade/256/create-new.png";
 export const DELETE_BUTTON_ICON =
@@ -9,3 +11,5 @@ export const CANCEL_ICON =
   "https://img.icons8.com/fluency/256/do-not-disturb.png";
 export const CART_ICON =
   "https://img.icons8.com/pastel-glyph/256/shopping-cart.png";
+export const LINKEDIN_ICON = "https://img.icons8.com/fluency/256/linkedin.png";
+export const GITHUB_ICON = "https://img.icons8.com/ios-glyphs/256/github.png";

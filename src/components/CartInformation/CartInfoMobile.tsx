@@ -9,8 +9,8 @@ function CartInfoMobile({ products }: { products: IProduct[] }) {
          <p>Title</p>
          <p>Discount Price</p>
       </div>
-      {products.map((product) => (
-        <div className={styles.product__content}>
+      {products.map((product, index) => (
+        <div className={styles.product__content} key={index}>
           <div className={styles.product__title}>{product.title}</div>
           <div>{product.discountPrice}</div>
         </div>

@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 400;
 }
 
 .modal__content {
@@ -22,15 +23,3 @@
     width: auto;
   }
 }
-
-/* @media (min-width: 650px) {
-  .modal__content {
-    width: 70vw;
-  }
-}
-
-@media (min-width: 700px) {
-  .modal__content {
-    min-width: auto;
-  }
-}  */

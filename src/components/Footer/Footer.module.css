@@ -1,0 +1,12 @@
+.wrapper {
+  padding: 0px 5px;
+}
+
+.wrapper img {
+  width: 30px;
+  vertical-align: middle;
+}
+
+.wrapper a {
+   margin: 0;
+ }

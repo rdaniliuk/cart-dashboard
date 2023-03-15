@@ -6,6 +6,9 @@ import CreateCart from "./components/CreateCart/CreateCart";
 import DeleteCart from "./components/DeleteCart/DeleteCart";
 import CartInfo from "./components/CartInformation/CartInfo";
 import { ICart } from "./components/CartPreview/CartPreview";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import { CONFIRM_MODAL, CREATE_MODAL, INFO_MODAL } from "./assets/link";
 
 type ModalId = number | null | undefined;
 
@@ -35,17 +38,18 @@ const defaultContext: IContext = {
   setSelectedCart: () => {},
 };
 
-
 export const AppContext = React.createContext<IContext>(defaultContext);
 
 function App() {
   const [carts, setCarts] = useState<ICart[]>([]);
   const [modalId, setModalId] = useState<ModalId>(null);
-  const [selectedCart, setSelectedCart] = useState<ICart>(defaultContext.selectedCart);
+  const [selectedCart, setSelectedCart] = useState<ICart>(
+    defaultContext.selectedCart
+  );
 
   return (
     <div className="App">
-      <p>Hello World</p>
+      <Header />
       <AppContext.Provider
         value={{
           carts,
@@ -57,22 +61,23 @@ function App() {
         }}
       >
         <Main />
-        {modalId === 1 ? (
+        {modalId === INFO_MODAL ? (
           <Modal
             setModalId={setModalId}
             children={<CartInfo cart={selectedCart} />}
           />
         ) : null}
-        {modalId === 2 ? (
+        {modalId === CREATE_MODAL ? (
           <Modal setModalId={setModalId} children={<CreateCart />} />
         ) : null}
-        {modalId === 3 ? (
+        {modalId === CONFIRM_MODAL ? (
           <Modal
             setModalId={setModalId}
             children={<DeleteCart cartId={selectedCart.id} />}
           />
         ) : null}
       </AppContext.Provider>
+      <Footer />
     </div>
   );
 }

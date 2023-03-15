@@ -5,11 +5,9 @@ import styles from "./CartsList.module.css";
 import Button from "../button/Button";
 import { CREATE_BUTTON_ICON } from "../../assets/icons";
 import { AppContext } from "../../App";
-import CreateCart from "../CreateCart/CreateCart";
-import Modal from "../modal/Modal";
 
 function CartsList() {
-  const { carts, setCarts, modalId, setModalId } = React.useContext(AppContext);
+  const { carts, setCarts, setModalId } = React.useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

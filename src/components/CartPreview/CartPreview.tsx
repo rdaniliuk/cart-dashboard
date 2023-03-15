@@ -3,8 +3,6 @@ import styles from "./CartPreview.module.css";
 import Button from "../button/Button";
 import { DELETE_BUTTON_ICON } from "../../assets/icons";
 import { AppContext } from "../../App";
-import DeleteCart from "../DeleteCart/DeleteCart";
-import Modal from "../modal/Modal";
 import { CART_ICON } from "../../assets/icons";
 
 export interface ICart {
@@ -39,18 +37,31 @@ function CartPreview(props: ICart) {
           setModalId(1);
         }}
       >
-        <div className={styles.cart__number}><div className={styles.cart__id}>{props.id}</div><img src={CART_ICON} alt="logo" /></div>
-        <div>Products count: <span className={styles.cart__value}>{props.totalProducts}</span></div>
-        <div>Price: <span className={styles.cart__value}>{props.total}</span></div>
-        <div>Discount Price: <span className={styles.cart__value}>{props.discountedTotal}</span></div>
+        <div className={styles.cart__number}>
+          <div className={styles.cart__id}>{props.id}</div>
+          <img src={CART_ICON} alt="logo" />
+        </div>
+        <div>
+          Products count:{" "}
+          <span className={styles.cart__value}>{props.totalProducts}</span>
+        </div>
+        <div>
+          Price: <span className={styles.cart__value}>{props.total}</span>
+        </div>
+        <div>
+          Discount Price:{" "}
+          <span className={styles.cart__value}>{props.discountedTotal}</span>
+        </div>
       </div>
       <div>
         <Button
           onClick={() => {
             setSelectedCart(props);
             setModalId(3);
-          } }
-          icon={DELETE_BUTTON_ICON} buttonText={""}        />
+          }}
+          icon={DELETE_BUTTON_ICON}
+          buttonText={""}
+        />
       </div>
     </div>
   );
