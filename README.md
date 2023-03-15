@@ -2,9 +2,9 @@
 
 This project is sample dashboard.
 User can:
-### `view a list of all baskets,`
-### `add and remove baskets,`
-### `after selecting a given basket, the user see the price of each product in the basket, and its price after the discount. This data stay shown in the chart.`
+##### view a list of all baskets,
+##### add and remove baskets,
+##### after selecting a given basket, the user see the price of each product in the basket, and its price after the discount. This data stay shown in the chart.
 
 ## Technologies stack
 
